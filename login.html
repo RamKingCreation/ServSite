@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="shortcut icon" href="../images/TransparentLogo.png" type="image/x-icon">
+
+    <title>Login page</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="../HTML/index.html" class="logo">
+          <span class="logo-icon">S</span>
+          <span>ServSite</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../HTML/index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="../HTML/about.html">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+
+          <li class="mobile-login">
+            <a href="../HTML/login.html" class="btn">Login</a>
+          </li>
+        </ul>
+
+        <div class="search-container" id="searchContainer">
+          <div class="mobile-search" id="mobileSearch">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="search-box" id="searchBox">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="What are you Looking for..."
+            />
+            <button id="searchBtn" style="display: none"></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <a href="../HTML/login.html" class="btn desktop-btn">Login</a>
+      </nav>
+    </header>
+
+    <div class="container" id="container">
+      <!-- SIGN UP -->
+      <div class="form-container sign-up">
+        <form id="signupForm">
+          <h1>Create Account</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+
+          <span>or use your email for registration</span>
+
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+
+          <!-- ROLE SELECTION DROPDOWN -->
+          <div class="role-selection-wrapper">
+            <select id="userRole" required>
+              <option value="" disabled selected>Choose a Role</option>
+              <option value="provider">Provider</option>
+              <option value="seeker">Seeker</option>
+            </select>
+            <!-- PROVIDER SERVICE LIST -->
+            <div
+              class="role-selection-wrapper"
+              id="providerServicesWrapper"
+              style="display: none"
+            >
+              <select id="providerService">
+                <option value="" disabled selected>Select Provider Type</option>
+                <option value="doctor">Doctor</option>
+                <option value="plumber">Plumber</option>
+                <option value="electrician">Electrician</option>
+                <option value="tutor">Tutor</option>
+                <option value="cleaner">Cleaner</option>
+                <option value="Mechanic">Mechanics</option>
+                <option value="automobile">Automobile</option>
+                <option value="Artist">Make-up Artist</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- PASSWORD FIELD WITH HINT & STRENGTH METER -->
+          <div class="password-box">
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-solid fa-eye togglePassword"
+              data-target="signupPassword"
+            ></i>
+          </div>
+          <small class="password-hint"
+            >Must contain text, number, and special character.</small
+          >
+
+          <!-- STRENGTH METER -->
+          <div class="strength-container">
+            <div class="strength-bar" id="strengthBar"></div>
+            <span class="strength-text" id="strengthText"></span>
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- SIGN IN -->
+      <div class="form-container sign-in">
+        <form id="loginForm">
+          <h1>Sign In</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+
+          <span>or use your email and password</span>
+
+          <input type="email" placeholder="Email" required />
+
+          <!-- PASSWORD FIELD -->
+          <div class="password-box">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-solid fa-eye togglePassword"
+              data-target="loginPassword"
+            ></i>
+          </div>
+
+          <a href="#">Forget Your Password?</a>
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+
+      <!-- TOGGLE PANEL -->
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggel-panel toggle-left">
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all of site features</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggel-panel toggle-right">
+            <h1>Hello Friends!</h1>
+            <p>
+              Register with your personal details to use all of site features
+            </p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JavaScript/login.js"></script>
+    <!-- <script src="../JavaScript/script.js"></script> -->
+  </body>
+</html>

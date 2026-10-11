@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ServSite | Service and WebSite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    
+    <!-- show the image/logo in browser tab  -->
+    <link rel="shortcut icon" href="../images/TransparentLogo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="../HTML/index.html" class="logo">
+          <span class="logo-icon">S</span>
+          <span>ServSite</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../HTML/index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="../HTML/about.html">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+
+          <li class="mobile-login">
+            <a target="_blank" href="../HTML/login.html" class="btn">Login</a>
+          </li>
+        </ul>
+
+        <div class="search-container" id="searchContainer">
+          <div class="mobile-search" id="mobileSearch">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="search-box" id="searchBox">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="What are you Looking for..."
+            />
+            <button id="searchBtn" style="display: none"></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <a target="_blank" href="../HTML/login.html" class="btn desktop-btn">Login</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Find Trusted Services Near You</h1>
+        <p>Doctors • Plumbers • Electricians • Tutors • Mechanics</p>
+        <a href="#services" class="btn">Explore Services</a>
+
+        <div class="search-status" id="searchStatus">Showing all services</div>
+        <div class="service-list" id="serviceList"></div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card" data-service="doctor">
+          <img src="../images/doctor.jpeg" alt="Doctor" />
+          <h3>Doctor</h3>
+          <p>Consult verified doctors</p>
+        </div>
+        <div class="service-card" data-service="plumber">
+          <img src="../images/plumber.jpeg" alt="Plumber" />
+          <h3>Plumber</h3>
+          <p>Fix pipes & leaks</p>
+        </div>
+        <div class="service-card" data-service="electrician">
+          <img src="../images/electrician.jpeg" alt="Electrician" />
+          <h3>Electrician</h3>
+          <p>Electrical repairs</p>
+        </div>
+        <div class="service-card" data-service="tutor">
+          <img src="../images/teacher.jpeg" alt="Tutor" />
+          <h3>Tutor</h3>
+          <p>Home & online tuition</p>
+        </div>
+        <div class="service-card" data-service="cleaner">
+          <img src="../images/homecleaner.jpeg" alt="Cleaner" />
+          <h3>Cleaner</h3>
+          <p>Home cleaning services</p>
+        </div>
+        <div class="service-card" data-service="machanic">
+          <img src="../images/machanic.jpeg" alt="Mechanic" />
+          <h3>Mechanic</h3>
+          <p>Vehicle repair services</p>
+        </div>
+        <div class="service-card" data-service="automobile">
+          <img src="../images/automobile.jpeg" alt="Automobile" />
+          <h3>Automobiles</h3>
+          <p>Book Vehicle for Ride/Trip/Travel</p>
+        </div>
+        <div class="service-card" data-service="beautypalour">
+          <img src="../images/beautician.jpeg" alt="beautician" />
+          <h3>Make-up Artist</h3>
+          <p>Book groom ready for the wedding</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="work-container">
+        <div class="work-card">
+          <div class="work-icon">🔍</div>
+          <h3>Search Service</h3>
+          <p>Find trusted professionals near your location easily.</p>
+        </div>
+        <div class="work-card">
+          <div class="work-icon">📅</div>
+          <h3>Book Instantly</h3>
+          <p>Choose your preferred service and book quickly.</p>
+        </div>
+        <div class="work-card">
+          <div class="work-icon">⭐</div>
+          <h3>Get Quality Work</h3>
+          <p>Enjoy fast, secure and trusted professional service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose">
+      <div class="choose-content">
+        <div class="choose-text">
+          <h2>Why Choose ServSite?</h2>
+          <p>
+            We provide fast, secure and trusted local services to help users
+            connect with verified professionals easily.
+          </p>
+          <div class="choose-features">
+            <div class="feature-item">✅ Verified Service Providers</div>
+            <div class="feature-item">⚡ Fast & Easy Booking</div>
+            <div class="feature-item">🛡 Secure & Trusted Platform</div>
+            <div class="feature-item">📞 24/7 Customer Support</div>
+          </div>
+        </div>
+        <div class="choose-image">
+          <div class="image-box"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-card">
+          <h2 class="counter" data-target="500">0</h2>
+          <p>Happy Users</p>
+        </div>
+        <div class="stat-card">
+          <h2 class="counter" data-target="120">0</h2>
+          <p>Service Providers</p>
+        </div>
+        <div class="stat-card">
+          <h2 class="counter" data-target="50">0</h2>
+          <p>Available Services</p>
+        </div>
+        <div class="stat-card">
+          <h2 class="counter" data-target="24">0</h2>
+          <p>24/7 Support</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>©2026 ServSite. All Rights Reserved.</p>
+    </footer>
+
+    <div class="booking-modal" id="bookingModal">
+      <div class="booking-box">
+        <span class="close-modal" id="closeModal">✖</span>
+        <h2 id="bookingTitle">Book Service</h2>
+        <form id="bookingForm">
+          <div class="input-group">
+            <input type="text" id="bookingName" placeholder=" " required />
+            <label for="bookingName">Enter Your Name</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="tel"
+              id="bookingPhone"
+              inputmode="numeric"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              placeholder=" "
+              required
+            />
+            <label for="bookingPhone">Enter Mobile Number</label>
+          </div>
+          <div class="location-group">
+            <div class="input-group" style="flex: 1; margin-bottom: 0">
+              <input type="text" id="userLocation" placeholder=" " required />
+              <label for="userLocation">Your Location</label>
+            </div>
+            <button
+              type="button"
+              id="gpsBtn"
+              class="gps-btn"
+              title="Use Current Location"
+            >
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+          <div class="input-group">
+            <textarea
+              id="problemDesc"
+              rows="3"
+              placeholder=" "
+              required
+            ></textarea>
+            <label for="problemDesc">Describe your problem...</label>
+          </div>
+          <button type="submit" class="btn submit-btn">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../JavaScript/script.js"></script>
+  </body>
+</html>

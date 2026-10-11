@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard | ServSite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/customer.css" />
+    <link rel="shortcut icon" href="../images/TransparentLogo.png" type="image/x-icon">
+  </head>
+  <body>
+
+    <!-- MAIN DASHBOARD WRAPPER -->
+    <div class="dashboard-container">
+      
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a href="../HTML/index.html" class="logo">
+            <span class="logo-icon">S</span>
+            <span>ServSite</span>
+          </a>
+          <i class="fa-solid fa-xmark sidebar-close" id="sidebarClose"></i>
+        </div>
+
+        <div class="user-profile-summary">
+          <img src="../images/ramupload.jpg" alt="User" id="sidebarUserImg" />
+          <h4 id="sidebarUserName">Loading...</h4>
+          <p id="sidebarUserEmail">loading@gmail.com</p>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li><a href="#" class="menu-link active" data-target="section-browse"><i class="fa-solid fa-compass"></i> Browse & Book</a></li>
+          <li><a href="#" class="menu-link" data-target="section-bookings"><i class="fa-solid fa-calendar-check"></i> My Bookings & Track</a></li>
+          <li><a href="#" class="menu-link" data-target="section-profile"><i class="fa-solid fa-user"></i> My Profile</a></li>
+          <li><a href="#" class="menu-link" data-target="section-support"><i class="fa-solid fa-headset"></i> Complaint / Support</a></li>
+          <li><a href="#" class="menu-link" data-target="section-settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+          <li><a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="main-content">
+        
+        <header class="dash-topbar">
+          <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="location-badge">
+            <i class="fa-solid fa-location-dot" style="color:#49d6ff;"></i>
+            <span id="currentLocText">Detecting location...</span>
+            <button id="refreshLocBtn" title="Update Location"><i class="fa-solid fa-rotate-right"></i></button>
+          </div>
+          <div class="dash-user-info">
+            <span id="topUserName">User</span>
+            <img src="../images/ramupload.jpg" alt="User" id="topUserImg" />
+          </div>
+        </header>
+
+        <!-- SECTION 1: BROWSE & SEARCH SERVICES -->
+        <section class="dash-section active" id="section-browse">
+          <div class="section-banner">
+            <h1>Find Trusted Local Services</h1>
+            <p>Connect with verified professionals instantly in your area</p>
+            <div class="search-box-large">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="customerSearchInput" placeholder="Search doctor, plumber, electrician..." />
+            </div>
+          </div>
+
+          <div class="services-category-grid" id="customerServiceGrid">
+            <div class="service-card-item" data-service="electrician" data-price="₹299 onwards">
+              <img src="../images/electrician.jpeg" alt="Electrician">
+              <h3>Electrician</h3>
+              <p>Wiring, appliance & power repair</p>
+              <span class="price-tag">Est. ₹299+</span>
+              <button class="btn book-trigger-btn">Book Now</button>
+            </div>
+            <div class="service-card-item" data-service="plumber" data-price="₹249 onwards">
+              <img src="../images/plumber.jpeg" alt="Plumber">
+              <h3>Plumber</h3>
+              <p>Leaking pipes, taps & drainage</p>
+              <span class="price-tag">Est. ₹249+</span>
+              <button class="btn book-trigger-btn">Book Now</button>
+            </div>
+            <div class="service-card-item" data-service="doctor" data-price="₹499 consultation">
+              <img src="../images/doctor.jpeg" alt="Doctor">
+              <h3>Doctor</h3>
+              <p>Consult verified physicians</p>
+              <span class="price-tag">Est. ₹499+</span>
+              <button class="btn book-trigger-btn">Book Now</button>
+            </div>
+            <div class="service-card-item" data-service="tutor" data-price="₹399/session">
+              <img src="../images/teacher.jpeg" alt="Tutor">
+              <h3>Tutor</h3>
+              <p>Home & online expert tuition</p>
+              <span class="price-tag">Est. ₹399/s</span>
+              <button class="btn book-trigger-btn">Book Now</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: MY BOOKINGS -->
+        <section class="dash-section" id="section-bookings">
+          <h2>My Active & Past Bookings</h2>
+          <div class="bookings-list-container">
+            <div class="booking-item-card active-booking">
+              <div class="booking-header-row">
+                <h3>Electrician - Fan Repair</h3>
+                <span class="status-badge in-progress">In Progress</span>
+              </div>
+              <p class="provider-info-text"><i class="fa-solid fa-user-gear"></i> Assigned Provider: <strong>Amit Sharma</strong> (4.8 ⭐)</p>
+              <p class="booking-meta"><i class="fa-solid fa-calendar"></i> Date: Today, 11:30 AM | <i class="fa-solid fa-indian-rupee-sign"></i> 299</p>
+              <div class="booking-action-buttons">
+                <button class="btn outline-btn" id="callProviderBtn"><i class="fa-solid fa-phone"></i> Call Provider</button>
+                <button class="btn outline-btn" id="chatProviderBtn"><i class="fa-solid fa-comments"></i> Live Chat</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: PROFILE (With Image Upload & Fixed Details) -->
+        <section class="dash-section" id="section-profile">
+          <h2>Customer Profile</h2>
+          <div class="profile-card-box">
+            <div class="profile-avatar-row">
+              <img src="../images/ramupload.jpg" alt="Profile" id="profileImgDisplay" />
+              <div>
+                <h3 id="profileNameDisplay">User Name</h3>
+                <p id="profileEmailDisplay">user@gmail.com</p>
+              </div>
+            </div>
+            <form id="profileUpdateForm" class="profile-form">
+              <div class="input-group">
+                <input type="file" id="profileImageInput" accept="image/*" style="background:rgba(255,255,255,0.06); padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); width:100%; color:#fff; font-size:13px;" />
+                <label style="top: -10px; font-size: 11px; color: #67f7d4;">Change Profile Picture</label>
+              </div>
+              <div class="input-group">
+                <input type="text" id="profName" required />
+                <label>Full Name</label>
+              </div>
+              <div class="input-group">
+                <input type="email" id="profEmail" required />
+                <label>Email Address</label>
+              </div>
+              <div class="input-group">
+                <input type="text" id="profPhone" required />
+                <label>Mobile Number</label>
+              </div>
+              <button type="submit" class="btn submit-btn">Save Changes</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- SECTION 4: SUPPORT -->
+        <section class="dash-section" id="section-support">
+          <h2>Customer Support & Complaints</h2>
+          <div class="support-box">
+            <p>Facing any issue with a service provider? Let us know:</p>
+            <form id="supportForm" style="margin-top:20px; display:flex; flex-direction:column; gap:18px;">
+              <div class="input-group">
+                <textarea id="supportDesc" rows="4" placeholder=" " required></textarea>
+                <label>Describe your issue...</label>
+              </div>
+              <button type="submit" class="btn submit-btn">Submit Ticket</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- SECTION 5: SETTINGS -->
+        <section class="dash-section" id="section-settings">
+          <h2>Account Settings</h2>
+          <div class="settings-box">
+            <div class="setting-option">
+              <div>
+                <h4>Push Notifications</h4>
+                <p>Receive live booking updates</p>
+              </div>
+              <input type="checkbox" checked style="width:20px; height:20px; cursor:pointer;" />
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div class="booking-modal" id="customerBookingModal">
+      <div class="booking-box">
+        <span class="close-modal" id="closeCustModal"><i class="fa-solid fa-xmark"></i></span>
+        <h2 id="modalServiceTitle">Book Service</h2>
+        <p id="modalServicePrice" class="modal-price-hint"></p>
+        <form id="customerBookingForm">
+          <div class="input-group">
+            <input type="text" id="custBookName" placeholder=" " required />
+            <label>Your Name</label>
+          </div>
+          <div class="input-group">
+            <input type="tel" id="custBookPhone" inputmode="numeric" maxlength="10" placeholder=" " required />
+            <label>Mobile Number</label>
+          </div>
+          <div class="input-group">
+            <textarea id="custProblemDesc" rows="3" placeholder=" " required></textarea>
+            <label>Describe your problem (e.g. Fan start nahi ho raha)...</label>
+          </div>
+          <button type="submit" class="btn submit-btn" style="width:100%; margin-top:10px;">Confirm & Book</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../JavaScript/customer.js"></script>
+  </body>
+</html>
